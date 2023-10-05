@@ -116,7 +116,7 @@ export default function OrderDataTable() {
   const { signal } = new AbortController();
 
   async function fetchOrders(url) {
-    const response = await fetch(url, { cache: "no-store" });
+    const response = await fetch(url, { cache: "no-store" }, { signal });
     const data = await response.json();
     return data;
   }
