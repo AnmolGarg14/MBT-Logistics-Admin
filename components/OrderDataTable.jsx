@@ -106,15 +106,17 @@
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import Image from "next/image";
 import Link from "next/link";
-import useSWR from "swr"; // Import SWR
-// import { useState } from "react";
+import useSWR from "swr";
+
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default function OrderDataTable() {
-  const { data: allOrders, error } = useSWR("/api/order", fetchOrders); // Use SWR
+  const { data: allOrders, error } = useSWR("/api/order", fetchOrders);
   const { signal } = new AbortController();
 
   async function fetchOrders(url) {
-    const response = await fetch(url, { signal });
+    const response = await fetch(url, { cache: "no-store" });
     const data = await response.json();
     return data;
   }
