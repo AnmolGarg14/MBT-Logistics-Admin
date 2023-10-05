@@ -13,7 +13,7 @@ const Menu = () => {
             </span>
           </div>
           {item.listItems.map((listItem) => (
-            <Link
+            <a
               href={listItem.url}
               className="flex gap-4 py-3 px-4 hover:bg-soft-bg hover:rounded-lg"
               key={listItem.id}
@@ -22,7 +22,7 @@ const Menu = () => {
               <span className="lg:flex hidden text-white">
                 {listItem.title}
               </span>
-            </Link>
+            </a>
           ))}
         </div>
       ))}
