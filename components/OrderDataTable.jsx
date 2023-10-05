@@ -113,7 +113,7 @@ export default function OrderDataTable() {
   const { data: allOrders, error } = useSWR("/api/order", fetchOrders); // Use SWR
 
   async function fetchOrders(url) {
-    const response = await fetch(url);
+    const response = await fetch(url, { cache: "no-store" });
     const data = await response.json();
     return data;
   }
