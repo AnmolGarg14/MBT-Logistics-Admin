@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -8,7 +9,9 @@ const Navbar = () => {
           <div className="pr-3">
             <Image src="/logo.svg" width={30} height={30} alt="logo" />
           </div>
-          <div className="font-semibold">MBT Admin Panel</div>
+          <Link href="/">
+            <div className="font-semibold text-white">MBT Admin Panel</div>
+          </Link>
         </div>
         <div className="flex justify-between gap-4 items-center">
           <div className="md:flex hidden gap-4">
@@ -42,7 +45,7 @@ const Navbar = () => {
               alt="profileimg"
               className="rounded-full"
             />
-            <span className="pl-4">Admin</span>
+            <span className="pl-4 text-white">Admin</span>
           </div>
         </div>
       </div>

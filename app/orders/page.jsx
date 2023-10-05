@@ -41,7 +41,7 @@ const Orders = () => {
     <section className="pt-2">
       <div className="flex flex-col">
         <div className="flex pb-8">
-          <div className="font-bold text-3xl">Orders</div>
+          <div className="font-bold text-3xl text-white">Orders</div>
           <div className="flex items-center pl-8">
             <input type="file" accept=".csv" onChange={handleFileChange} />
             <button

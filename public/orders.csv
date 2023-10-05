@@ -1,5 +1,0 @@
-chargedweight,dateofbooking,deliverystation,deliverytype,noofpackages,orderid,originstation,status
-890,16-03-2023,Mumbai,Godown,80,RF567,Bangalore,Booked
-990,16-03-2023,Mumbai,Godown,20,LR897,Pune,Delivered
-790,16-03-2023,Chennai,Godown,20,LR8990,Delhi,In Transit
-790,16-03-2023,Chennai,Godown,20,LR845,Delhi,In Transit

@@ -8,7 +8,7 @@ export const POST = async (req) => {
     await connectToDB();
 
     const results = [];
-    fs.createReadStream("public/orders.csv")
+    fs.createReadStream("public/DATA.csv")
       .pipe(csv())
       .on("data", (row) => {
         results.push(row);

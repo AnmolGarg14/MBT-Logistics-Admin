@@ -19,7 +19,9 @@ const Menu = () => {
               key={listItem.id}
             >
               <Image src={listItem.icon} width={20} height={20} alt="icon" />
-              <span className="lg:flex hidden">{listItem.title}</span>
+              <span className="lg:flex hidden text-white">
+                {listItem.title}
+              </span>
             </Link>
           ))}
         </div>
