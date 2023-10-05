@@ -14,6 +14,7 @@ const Menu = () => {
           </div>
           {item.listItems.map((listItem) => (
             <Link
+              prefetch={false}
               href={listItem.url}
               className="flex gap-4 py-3 px-4 hover:bg-soft-bg hover:rounded-lg"
               key={listItem.id}

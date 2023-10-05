@@ -107,6 +107,8 @@ import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import Image from "next/image";
 import Link from "next/link";
 import useSWR from "swr";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -114,12 +116,17 @@ export const revalidate = 0;
 export default function OrderDataTable() {
   const { data: allOrders, error } = useSWR("/api/order", fetchOrders);
   const { signal } = new AbortController();
+  const router = useRouter();
 
   async function fetchOrders(url) {
     const response = await fetch(url, { cache: "no-store" }, { signal });
     const data = await response.json();
     return data;
   }
+
+  useEffect(() => {
+    router.refresh();
+  });
 
   const handleDelete = async (_id) => {
     const hasConfirmed = confirm(
