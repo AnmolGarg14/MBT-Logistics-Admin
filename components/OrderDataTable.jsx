@@ -111,9 +111,10 @@ import useSWR from "swr"; // Import SWR
 
 export default function OrderDataTable() {
   const { data: allOrders, error } = useSWR("/api/order", fetchOrders); // Use SWR
+  const { signal } = new AbortController();
 
   async function fetchOrders(url) {
-    const response = await fetch(url, { cache: "no-store" });
+    const response = await fetch(url, { signal });
     const data = await response.json();
     return data;
   }
