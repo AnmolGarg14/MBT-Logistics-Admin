@@ -19,7 +19,8 @@
     "mongoose": "^7.5.3",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "swr": "^2.2.4"
   },
   "devDependencies": {
     "autoprefixer": "latest",
