@@ -8,6 +8,16 @@ import { useState, useEffect } from "react";
 export default function OrderDataTable() {
   const [allOrders, setAllOrders] = useState([]);
 
+  const fetchOrders = async () => {
+    const response = await fetch("/api/order");
+    const data = await response.json();
+    setAllOrders(data);
+  };
+
+  useEffect(() => {
+    fetchOrders();
+  }, []);
+
   const handleDelete = async (_id) => {
     const hasConfirmed = confirm(
       "Are you sure you want to delete this consignment?"
@@ -51,16 +61,6 @@ export default function OrderDataTable() {
       );
     },
   };
-
-  const fetchOrders = async () => {
-    const response = await fetch("/api/order");
-    const data = await response.json();
-    setAllOrders(data);
-  };
-
-  useEffect(() => {
-    fetchOrders();
-  }, []);
 
   const columns = [
     { field: "orderid", headerName: "LR Number", width: 130 },
