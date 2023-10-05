@@ -75,6 +75,7 @@ export default function OrderDataTable() {
 
   return (
     <div>
+      <button onClick={fetchOrders}>Refresh</button>
       <DataGrid
         rows={allOrders}
         columns={[...columns, actionColumn]}
